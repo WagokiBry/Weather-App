@@ -1,10 +1,11 @@
-import "./styles.css"
+import "./styles.css";
+import {processWeatherData} from "./processedData.js";
 
 async function searchAndDisplayWeather(location){
     
     try {
       let fetchedData = await fetch(
-        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&include=days&key=BGMXWPTCJ9EFT7U9HKV3TXT2L&contentType=json`
+        `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/today?unitGroup=metric&include=current&key=BGMXWPTCJ9EFT7U9HKV3TXT2L&contentType=json`
        ,
         { mode: "cors" }
       )
@@ -15,7 +16,9 @@ async function searchAndDisplayWeather(location){
         );
       }
       let searchData = await fetchedData.json();
-console.log(searchData)
+      const processedData = processWeatherData(searchData);
+
+console.log(processedData)
 
       
     }
@@ -29,4 +32,4 @@ console.log(searchData)
     };
   }
 
-  searchAndDisplayWeather("ottawa")
+  searchAndDisplayWeather("paris")
