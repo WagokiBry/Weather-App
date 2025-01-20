@@ -10,10 +10,8 @@ export function displayWeatherData(weatherData, displayDiv) {
         <p>Conditions: ${day.conditions}</p>
         <p>High: ${day.high_temp}°C</p>
         <p>Low: ${day.low_temp}°C</p>
-        <p>${day.description}</p>
-        <p>${day.icon}</p>
-       
-        
+        <p>Weather description: ${day.description}</p>
+        <p>Weather icon: ${day.icon}</p>
       `;
 
       

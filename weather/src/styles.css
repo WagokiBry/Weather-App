@@ -47,7 +47,12 @@ h1 {
 }
 
 #displayDiv {
+  
   margin-top: 20px;
+}
+
+#contentDiv {
+  display: flex;
 }
 
 #displayDiv div {

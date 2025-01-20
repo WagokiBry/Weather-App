@@ -1,6 +1,8 @@
 import "./styles.css";
 import {processWeatherData} from "./processedData.js";
 import { displayWeatherData } from './displayWeather.js';
+import { displayIcon} from "./displayIcon.js";
+
 
 async function searchAndDisplayWeather(){
   const locationInput = document.getElementById('locationInput').value;
@@ -22,7 +24,7 @@ async function searchAndDisplayWeather(){
       let searchData = await fetchedData.json();
       const processedData = processWeatherData(searchData);
       displayWeatherData(processedData, displayDiv); 
-
+     displayIcon(processedData)
       
 // console.log(processedData)
 
