@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "callbackError:fix": "standard --fix",
-    "standard": "standard"
+    "standard": "standard",
+    "serve": "webpack serve"
   },
   "keywords": [],
   "author": "",
