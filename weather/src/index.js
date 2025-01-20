@@ -1,5 +1,6 @@
 import "./styles.css";
 import {processWeatherData} from "./processedData.js";
+import { displayWeatherData } from './displayWeather.js';
 
 async function searchAndDisplayWeather(){
   const locationInput = document.getElementById('locationInput').value;
@@ -20,8 +21,8 @@ async function searchAndDisplayWeather(){
       }
       let searchData = await fetchedData.json();
       const processedData = processWeatherData(searchData);
-
-console.log(processedData)
+      displayWeatherData(processedData, displayDiv); 
+// console.log(processedData)
 
       
     }
@@ -29,9 +30,9 @@ console.log(processedData)
 
 
     catch (error) {
-      console.error("Error fetching Data:", error);
-      // Handle the error here, e.g. display an error message to the user
-      // img.src = "sonic.jpg"; // Set a placeholder image
+      console.error("Error fetching weather data:", error);
+    // Handle the error here, e.g., display an error message to the user
+    displayDiv.innerHTML = `<p>Error fetching weather data: ${error.message}</p>`;
     };
   }
 
