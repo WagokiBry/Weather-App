@@ -22,6 +22,8 @@ async function searchAndDisplayWeather(){
       let searchData = await fetchedData.json();
       const processedData = processWeatherData(searchData);
       displayWeatherData(processedData, displayDiv); 
+
+      
 // console.log(processedData)
 
       
