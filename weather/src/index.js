@@ -5,6 +5,7 @@ import { displayIcon} from "./displayIcon.js";
 
 
 async function searchAndDisplayWeather(){
+  
   const locationInput = document.getElementById('locationInput').value;
   
   // const loadingSpinner = document.getElementById('loadingSpinner');
